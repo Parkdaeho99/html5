@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>객체 만들기</title>
+</head>
+<body>
+	<button onclick="myCar.addSpeed()">가속</button>
+	<button onclick="myCar.subSpeed()">감속</button>
+	<script>
+	/*배열은 myCar=[30,20,10]; 이렇게 만들었음, 객체는 { }*/
+		let myCar = {
+			"company" : "현대자동차", //키(변수)는 ""로 감싸도 되고 생략도 된다.
+			color : "red",
+			model : "그렌저",
+			maxSpeed : 350,
+			speed : 0,
+			addSpeed : function() {
+				this.speed = this.speed + 10;
+				console.log(this.speed);
+			},
+			subSpeed : function() {
+				this.speed -= 10;
+				console.log(this.speed);
+			},
+			moveSpeed : function(x) {
+				this.speed += x;
+				console.log(this.speed);
+			}
+		};
+		
+		console.log(myCar.company);
+		console.log(myCar.color);
+		console.log(myCar.speed);
+		myCar.moveSpeed(100);
+	</script>
+</body>
+</html>

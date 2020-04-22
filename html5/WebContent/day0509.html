@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<script>
+		function car() {
+			/*함수*/
+			
+		}
+		
+		function Car(company, color, model) {
+			/*클래스*/
+			this.company = company, //키(변수)는 ""로 감싸도 되고 생략도 된다.
+			/*자바에서는 필드영역에 변수를 선언해주고, 그후에 this를 써서 값을 변경하는데,
+			자바스크립트에서는 변수 선언을 따로 해주지 않아도 this.company = company 하는 순간
+			선언과 값 저장이 한번에 된다*/
+			/*자바랑 다르게 ;이 아닌 ,로 구분한다*/
+			/*day0508처럼 객체를 바로 만들든 day0509처럼 클래스를 만든 뒤에 객체를 만들든...왜캐 많을까*/
+			this.color = color,
+			this.model = model,
+			this.maxSpeed = 350,
+			this.speed = 0,
+			this.addSpeed = function() {
+				this.speed = this.speed + 10;
+				console.log(this.speed);
+			},
+			this.subSpeed = function() {
+				this.speed -= 10;
+				console.log(this.speed);
+			},
+			this.moveSpeed = function(x) {
+				this.speed += x;
+				console.log(this.speed);
+			}
+		}
+		
+		let myCar = new Car("기아자동차", "black", "k5");
+		console.log(myCar.company);
+		
+	</script>
+</body>
+</html>

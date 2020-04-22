@@ -1,0 +1,35 @@
+@charset "UTF-8";
+
+/*전체 선택자*/
+* {
+	margin: 0;
+	padding: 0;
+	
+}
+
+div {
+	background: skyblue;
+}
+
+#box1 {
+	background: orange;
+}
+
+#box2, #box3 {
+	background: yellow;
+}
+
+.boxes {
+	color : red;
+}
+
+.bigFont {
+	font-size : 100px;
+}
+
+/*
+적용 우선순위
+> 1순위 > id 선택자 ( #box1 { ~~ } )
+> 2순위 > class 선택자 ( .boxes { ~~ } )
+> 3순위 > tag 선택자 ( div { ~~ } )
+*/

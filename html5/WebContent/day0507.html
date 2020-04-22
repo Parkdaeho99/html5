@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>무명함수</title>
+</head>
+<body>
+	<button>버튼1</button>
+	<button>버튼2</button>
+	
+	<script>
+		function wConsole() {
+			console.log("일반함수");
+		}
+		let btn = document.querySelectorAll("button");
+		/*btn에는 버튼1, 버튼2를 선택할 수 있는 ㅇㅇ말어렵네*/
+		btn[0].addEventListener("click", wConsole);
+		/*클릭하면 wConsole 호출, 매개변수가 없으면 wConsole에서 ()괄호를 뺀다*/
+		btn[1].addEventListener("click", function(){
+			document.write("무명함수"); // 함수에서 write()를 호출하면 문서를 지우고 작성한다.
+		});
+		
+		/* 자바의 익명구현객체를 자바스크립트에서 무명함수로 */
+		/* 한번만 쓰고 버리는 함수 */ /* 한번만 쓰고 버리는 객체랑 비슷하쥬 */
+	</script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Insert title here</title>
+	<link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+	<style>
+	* {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		text-decoration: none;
+	}
+	
+	/*자식선택자*/
+	/*.menu의 자식 중에 h3*/
+	.menu > h3 {
+		color: blue;
+	}
+	
+	/*후손선택자*/
+	/*menu의 자식은 h3랑 ul이고 like는 자손임*/
+	.menu .like {
+		color: navy;
+	}
+	
+	/* +는 같은 급에 있는 놈들 중에 다음놈*/
+	.like + li {
+		background: purple;
+	}
+	
+	#korea > li {
+		font-size: 20px;
+	}
+	
+	#korea > li:first-child {
+		color : red;
+	}
+	
+	#korea > li:last-child {
+		background: red;
+	}
+	
+	#america > li:nth-child(3) {
+		background: pink;
+	}
+	
+	#america > li:nth-child(2n-1) {
+		color: red;
+	}
+	
+	#china > li:first-of-type {
+		color: purple;
+	}
+	
+	#thai > li:nth-child(2) {
+		background: pink;
+	}
+	
+	/*같은 타입 중 두번째*/
+	#thai > li:nth-of-type(2) {
+		background: green;
+	}
+	
+	/*last가 붙으면 뒤에서 부터 앞으로 숫자를 센다.*/
+	#thai > li:nth-last-child(1) {
+		font-style: italic;
+		font-weight: 900;
+	}
+	
+	#thai > li:nth-last-of-type(3) {
+		font-style: italic;
+		font-weight: 900;
+	}
+	
+	h3 {
+		font-family: 궁서,맑은 고딕,serif;
+	}
+	
+	li {
+		font-family: 'Nanum Pen Script', cursive;
+	}
+	
+	</style>
+</head>
+<body>
+	<div>
+		<ul>
+			<li class="menu">
+				<h3>한식</h3>
+				<ul id="korea">
+					<li>김치찌개</li>
+					<li>된장찌개</li>
+					<li class="like">비빔밥</li>
+				</ul>
+			</li>
+			<li class="menu">
+				<h3>양식</h3>
+				<ul id="america">
+					<li class="like">파스타</li>
+					<li>피자</li>
+					<li>스테이크</li>
+				</ul>
+			</li>
+			<li class="menu">
+				<h3>중식</h3>
+				<ul id="china">
+					<li>짜장면</li>
+					<li>짬뽕</li>
+					<li class="like">탕수육</li>
+				</ul>
+			</li>
+			<li class="menu">
+				<h3>일식</h3>
+				<ul id="japan">
+					<li>초밥</li>
+					<li class="like">우동</li>
+					<li>돈가스</li>
+				</ul>
+			</li>
+			<li class="menu">
+				<h3>일식</h3>
+				<ul id="thai">
+					<li class="t">볶음밥</li>
+					<p class="t">커리</p>
+					<li class="t">쌀국수</li>
+					<p class="t">빵</p>
+					<li class="t">반미</li>
+				</ul>
+			</li>
+			
+		</ul>
+	</div>
+</body>
+</html>

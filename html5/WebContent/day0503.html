@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>프롬프트</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style: none;
+		}
+		
+		p {
+			position:relative;
+			left: 50px;
+			top: 50px;
+			background: yellow;
+			color: #333;
+			border: 2px solid blue;
+			width: 300px;
+			height: 50px;
+			line-height: 50px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<p> <span id="xValue"></span> + <span id="yValue"></span> = <span id="calc"></span> </p>
+	</div>
+
+	<script>
+		let x = Number(prompt("x값"));
+		let y = parseInt(prompt("y값"));
+		let temp = prompt("temp값");	
+		
+		document.getElementById("xValue").innerText = "<em>"+x+"</em>";
+		/*xValue로 지정된 태그의 내부 내용을 텍스트형식의 x로 지정*/
+		document.getElementById("yValue").innerText = y;
+		/*getElementById("yValue") : yValue라는 아이디로써 엘리먼트(태그)를 가져온다*/
+		/*그리고 그 태그의 내부 내용(.innerText)을 y로 지정*/
+		document.getElementById("calc").innerHTML = "<em>"+x+y;+"</em>"
+		/*calc로 지정된 태그의 내부 내용을 HTML형식의 x+y로 지정*/
+		console.log(document.getElementById("xValue").innerText);
+		
+	</script>
+</body>
+</html>

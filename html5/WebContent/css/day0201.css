@@ -1,0 +1,9 @@
+@charset "UTF-8";
+h1 {
+	display : block; /*오른쪽 끝까지 내 영역으로 쓰겠다. 기본값이다.*/
+	color : blue;
+	background : orange;
+	font-size : 60px;
+	text-align : right;
+	
+}

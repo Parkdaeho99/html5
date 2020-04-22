@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h3>안녕하세요</h3>
+	<h3 class="text">안녕하세요</h3>
+	<h3 class="text">안녕하세요</h3>
+	<script>
+	/*getElementById는 Id를 선택하는 거라서 Element이고*/
+	/*getElementsByTagName은 사용된 Tag를 선택하는 거라서 Elements임*/
+		let tags = document.getElementsByTagName("h3"); //단일 태그가 아닐시에는 배열로 리턴
+		for(let i=0; i<tags.length; i++) {
+			tags[i].innerText = "Hello";
+			tags[i].style.background = "yellow";
+		}
+		
+		let text = document.getElementsByClassName("text");
+		/*text 클래스가 여러개 쓰였으니 배열로 리턴됨*/
+		for(let i=0; i<text.length; i++) {
+			text[i].style.color = "white";
+		}
+		
+		let query = document.querySelector("h3");
+		/*여러개 중에 첫번째 h3만 선택됨*/
+		query.innerText = "안녕하세요.";
+		
+		/*태그를 잡는 querySelector*/
+		let querys = document.querySelectorAll("h3");
+		for(let i=0; i<querys.length; i++){
+			querys[i].innerText = "자바스크립트";
+		}
+		
+		/*클래스를 잡는 querySelector*/
+		querys = document.querySelectorAll(".text");
+		for(let i=0; i<querys.length; i++){
+			querys[i].style.fontSize = "30px";
+		}
+		/*클래스든 태그든 다 잡을 수 있는 querySelector*/
+		
+		
+	</script>
+</body>
+</html>
