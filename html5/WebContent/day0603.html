@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li>css</li>
+		<li>html</li>
+		<li>javascript</li>
+	</ul>
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script>
+		$(function(){
+			$("ul").append("<li>jQuery</li>");
+			$("<li>appendTo</li>").appendTo("ul");
+			/*ul 태그 내부에서 마지막 자리에 추가*/
+			$("ul").prepend("<li>xml</li>");
+			$("<li>prependTo</li>").prependTo("ul");
+			/*ul 태그 내부에서 가장 앞자리에 추가*/
+			$("ul").before("<p>before</p>");
+			$("<p>insertBefore</p>").insertBefore("ul");
+			/*ul 태그 앞(바깥)에 추가*/
+			$("ul").after("<p>after</p>");
+			$("<p>insertAfter</p>").insertAfter("ul");
+			/*ul 태그 뒤(바깥)에 추가*/
+ 			$("li:eq(2)").appendTo("ul");
+			/*세번째에 있던 css를 ul 내부 마지막 자리로 이동*/
+ 			$("li:eq(2)").prependTo("ul");
+			/*세번째에 있던 html을 ul 내부 가장 앞자리로 이동*/
+ 			$("li:eq(2)").clone().prependTo("ul");
+			/*세번째에 있던 xml을 복사해서 복사한 놈을 ul 내부 가장 앞자리로 이동*/
+ 			$("li:eq(3)").empty();
+			/*세번째 내용을 지운다. li 태그는 남아 있음*/
+ 			$("li:eq(3)").remove();
+			/*세번째 태그 자체를 삭제*/
+		});
+	</script>
+</body>
+</html>

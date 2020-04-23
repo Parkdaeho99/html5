@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		* {
+			margin: 0px;
+			padding: 0px;
+			text-decoration: none;
+			list-style: none;
+		}
+		#box {
+			width: 300px;
+			height: 300px;
+			background: orange;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<button>버튼1</button>
+	</div>
+	<div id="box"></div>
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script>
+		/* 화면이 시작되면 실행할 무명함수 function() */
+		/* $(실행할 함수) */
+		$(function(){
+			let toggleBtn = 0;
+			/*태그 선택자, 버튼이 클릭되면 실행할 무명함수 function()*/
+			$("button").click(function(){
+				toggleBtn++;
+				if(toggleBtn%2 == 0) {
+					$("#box").show();
+				} else
+					$("#box").hide();
+			});
+		});
+	</script>
+</body>
+</html>

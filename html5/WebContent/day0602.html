@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			text-decoration: none;
+			list-style: none;
+		}
+		
+		body {
+			margin: 20px;
+			padding: 20px;
+			line-height: 1em;
+			font-size: 1em;
+			background: #555;
+			color: #000;
+		}
+		
+		li {
+			margin-top: 20px;
+		}
+		
+		.title {
+			font-size: 1.5em; /* em : 부모 글자 크기에 1.5배?*/
+			font-weight: 300;
+		}
+		
+		.container {
+			margin-top: 35px;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">basic :: jQuery basic study</h1>
+	<div class="container">
+		<ul id="tutorial">
+			<li class="html">HTML</li>
+			<li class="css">CSSL</li>
+			<li class="css3">CSS3</li>
+			<li class="javascript">JavaScript</li>
+			<li class="jquery">JQuery</li>
+			<li class="blank"></li>
+		</ul>
+		<p id="portfolio">portfolio</p>
+	</div>
+	<!--  JQuery Code -->
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script>
+		$(function() {
+// 			$(".html").css("background", "red");
+// 			$(".CSS3 ~ li").css("background", "pink");
+// 			/*CSS3 뒤에 있는 것 중에 li태그 선택*/
+// 			$(".html ~ .css3").css("background", "yellow");
+// 			/*html 뒤에 있는 것 중에 CSS선택*/
+			$("ul").find("li").first().css("background", "#ececec");
+			$("ul").find("li").last().html("<em>Blank</em>").css("background", "#ececec");
+			$("ul").children().eq(2).css("background", "orange");
+			$("ul > li:first").css("font-size","30px");
+			$("ul > li:first-child").css("font-weight","900");
+			$("ul > li:nth-child(2)").css("color", "red");
+			$("ul > li").children().eq(2).css("color", "blue");
+			$("li").even().css("background","green"); //0 , 2 , 4
+			$("li").odd().css("background","yellowgreen"); //1 , 3 , 5
+			$("li:gt(3)").css("font-size","40px"); //3보다 큰 놈들 선택 4,5
+			$("p").parent("li").css("background", "orange");
+			$("p").parent("li").css( {"background":"orange", "color":"white"});
+			/*객체를 사용하여 여러개의 css 값을 한번에 변경*/
+			$(".css").next().next().text("넥스트로 이동");
+			$(".css").prev().text("앞으로 이동");
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<button>버튼1</button>
+	<button>바인드</button>
+	<button>언바인드</button>
+	<button>트리거</button>
+	<div></div>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"></script>
+	<script>
+		$(function() {
+			$("div").css({"width":"300px","height":"300px","background":"red"});
+			$("button").eq(1).bind("click", function(){
+					/*버튼이 눌러졌을때 버튼에 실행될 함수를 묶어준다.*/
+				$("button").first().bind("click", function(){
+					$("div").toggle();/*display none을 추가하고 안하고 반복*/
+				});				
+			});
+			$("button:eq(2)").click(function(){
+				$("button").first().unbind("click");
+				/*unbind 대신 off , bind 대신 on 사용 가능*/
+			});
+			/*세번째 버튼을 클릭했을 때, 첫번째 버튼의 클릭 방아쇠를 언바인드한다.*/
+			$("button:last").click(function(){
+				/*마지막 버튼을 눌렀을 때*/
+				$("button").eq(0).trigger("click");
+				/*0번 버튼에 있는 click이랑 같은 행동을 취한다*/
+				/*0번 버튼에 바인드된 함수를 언바인드 시킨 뒤에 trigger로 0번 버튼을 누르면
+				  0번 버튼에 함수가 없기 때문에 아무 반응도 없다.
+				*/
+				/*마지막 버튼이 눌러졌을 때, 첫번째 버튼의 클릭 방아쇠를 당긴다.*/
+			});
+		});
+	</script>
+</body>
+</html>
