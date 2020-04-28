@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2></h2><br/>
+	<h2></h2>
+	<button>버튼</button>
+	<script src="js/jquery-3.5.0.min.js"></script>
+	<script src="js/jquery004.js"></script>
+	<script>
+		$(function(){
+			$("html, body").on("mousewheel",function(e){
+				$("h2:first").text(e.originalEvent.wheelDelta);
+			});
+			$("html, body").on("DOMMouseScroll",function(e){
+				$("h2:last").text(e.originalEvent.detail); /*파폭 전용*/
+			});
+			$("button").bind("click mouseenter", function(){console.log("click")});
+		});
+	</script>
+</body>
+</html>
