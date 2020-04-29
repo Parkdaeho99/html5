@@ -16,6 +16,7 @@ img {
 	position:absolute;
 	width: calc(640px*3);
 	height: 213px;
+	border: 3px solid red;
 }
 
 .container > div {
